@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_instagram/screens/screens.dart';
 import 'package:flutter_instagram/screens/splash/splash_screen.dart';
 
 class CustomRouter {
@@ -11,8 +12,17 @@ class CustomRouter {
           builder: (_) => const Scaffold(),
         );
 
-      case SplashScreen.routName:
-        return SplashScreen.rout();
+      case SplashScreen.routeName:
+        return SplashScreen.route();
+
+      case LoginScreen.routeName:
+        return LoginScreen.route();
+
+      case SignupScreen.routeName:
+        return SignupScreen.route();
+
+      case NavScreen.routeName:
+        return NavScreen.route();
 
       default:
         return _errorRoute();
