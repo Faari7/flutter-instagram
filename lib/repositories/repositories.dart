@@ -4,3 +4,5 @@ export 'users/user_repository.dart';
 export 'users/base_user_repository.dart';
 export 'storage/base_storage_repository.dart';
 export 'storage/storage_repository.dart';
+export 'post/base_post_repository.dart';
+export 'post/post_repository.dart';
