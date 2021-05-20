@@ -22,7 +22,7 @@ class UserProfileImage extends StatelessWidget {
       backgroundImage: profileImage != null
           ? FileImage(profileImage)
           : profileImageUrl.isNotEmpty
-              ? CachedNetworkImage(imageUrl: profileImageUrl)
+              ? CachedNetworkImageProvider(profileImageUrl)
               : null,
       child: _noProfileIcon(),
     );
