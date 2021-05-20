@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../screens.dart';
+
 class ProfileButton extends StatelessWidget {
   final bool isCurrentUser;
   final bool isFollowing;
@@ -13,7 +15,10 @@ class ProfileButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return isCurrentUser
         ? FlatButton(
-            onPressed: () {},
+            onPressed: () => Navigator.of(context).pushNamed(
+              EditProfileScreen.routeName,
+              arguments: EditProfileScreenArgs(context),
+            ),
             color: Theme.of(context).primaryColor,
             textColor: Colors.white,
             child: const Text(
