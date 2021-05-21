@@ -20,17 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b159a13e-b394-4c4c-91d9-dc7fddb21bbc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/flutter-instagram.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flutter-instagram.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/edit_profile/edit_profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/edit_profile/edit_profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/config/custom_router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/config/custom_router.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/users/base_user_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/users/base_user_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/users/user_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/users/user_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/nav/widgets/tab_navigator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/nav/widgets/tab_navigator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/profile/bloc/profile_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/profile/bloc/profile_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/profile/bloc/profile_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/profile/bloc/profile_event.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/profile/bloc/profile_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/profile/bloc/profile_state.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/profile/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/profile/profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/search/search_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/search/search_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/widgets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/widgets.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +43,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -87,21 +85,21 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1299" height="322" key="GridCell.Tab.0.bottom" timestamp="1621582230755">
+    <state width="1299" height="322" key="GridCell.Tab.0.bottom" timestamp="1621582745839">
       <screen x="0" y="25" width="1920" height="970" />
     </state>
-    <state width="1299" height="322" key="GridCell.Tab.0.bottom/0.25.1920.970@0.25.1920.970" timestamp="1621582230755" />
-    <state width="1299" height="322" key="GridCell.Tab.0.center" timestamp="1621582230755">
+    <state width="1299" height="322" key="GridCell.Tab.0.bottom/0.25.1920.970@0.25.1920.970" timestamp="1621582745839" />
+    <state width="1299" height="322" key="GridCell.Tab.0.center" timestamp="1621582745839">
       <screen x="0" y="25" width="1920" height="970" />
     </state>
-    <state width="1299" height="322" key="GridCell.Tab.0.center/0.25.1920.970@0.25.1920.970" timestamp="1621582230755" />
-    <state width="1299" height="322" key="GridCell.Tab.0.left" timestamp="1621582230753">
+    <state width="1299" height="322" key="GridCell.Tab.0.center/0.25.1920.970@0.25.1920.970" timestamp="1621582745839" />
+    <state width="1299" height="322" key="GridCell.Tab.0.left" timestamp="1621582745838">
       <screen x="0" y="25" width="1920" height="970" />
     </state>
-    <state width="1299" height="322" key="GridCell.Tab.0.left/0.25.1920.970@0.25.1920.970" timestamp="1621582230753" />
-    <state width="1299" height="322" key="GridCell.Tab.0.right" timestamp="1621582230755">
+    <state width="1299" height="322" key="GridCell.Tab.0.left/0.25.1920.970@0.25.1920.970" timestamp="1621582745838" />
+    <state width="1299" height="322" key="GridCell.Tab.0.right" timestamp="1621582745839">
       <screen x="0" y="25" width="1920" height="970" />
     </state>
-    <state width="1299" height="322" key="GridCell.Tab.0.right/0.25.1920.970@0.25.1920.970" timestamp="1621582230755" />
+    <state width="1299" height="322" key="GridCell.Tab.0.right/0.25.1920.970@0.25.1920.970" timestamp="1621582745839" />
   </component>
 </project>
