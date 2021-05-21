@@ -20,14 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b159a13e-b394-4c4c-91d9-dc7fddb21bbc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/flutter-instagram.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flutter-instagram.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/config/custom_router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/config/custom_router.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/repositories.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/repositories.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/profile/widgets/profile_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/profile/widgets/profile_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/screens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/screens.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/edit_profile/edit_profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/edit_profile/edit_profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/nav/widgets/tab_navigator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/nav/widgets/tab_navigator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/profile/bloc/profile_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/profile/bloc/profile_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/profile/bloc/profile_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/profile/bloc/profile_event.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/profile/bloc/profile_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/profile/bloc/profile_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/profile/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/profile/profile_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +48,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -80,5 +85,23 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1299" height="322" key="GridCell.Tab.0.bottom" timestamp="1621582230755">
+      <screen x="0" y="25" width="1920" height="970" />
+    </state>
+    <state width="1299" height="322" key="GridCell.Tab.0.bottom/0.25.1920.970@0.25.1920.970" timestamp="1621582230755" />
+    <state width="1299" height="322" key="GridCell.Tab.0.center" timestamp="1621582230755">
+      <screen x="0" y="25" width="1920" height="970" />
+    </state>
+    <state width="1299" height="322" key="GridCell.Tab.0.center/0.25.1920.970@0.25.1920.970" timestamp="1621582230755" />
+    <state width="1299" height="322" key="GridCell.Tab.0.left" timestamp="1621582230753">
+      <screen x="0" y="25" width="1920" height="970" />
+    </state>
+    <state width="1299" height="322" key="GridCell.Tab.0.left/0.25.1920.970@0.25.1920.970" timestamp="1621582230753" />
+    <state width="1299" height="322" key="GridCell.Tab.0.right" timestamp="1621582230755">
+      <screen x="0" y="25" width="1920" height="970" />
+    </state>
+    <state width="1299" height="322" key="GridCell.Tab.0.right/0.25.1920.970@0.25.1920.970" timestamp="1621582230755" />
   </component>
 </project>
