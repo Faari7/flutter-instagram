@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_instagram/blocs/auth/auth_bloc.dart';
 import 'package:flutter_instagram/config/custom_router.dart';
+import 'package:flutter_instagram/cubits/cubits.dart';
 import 'package:flutter_instagram/enums/bottom_nav_item.dart';
 import 'package:flutter_instagram/models/post_model.dart';
 import 'package:flutter_instagram/models/user_model.dart';
@@ -51,6 +52,7 @@ class TabNavigator extends StatelessWidget {
           create: (context) => FeedBloc(
             postRepository: context.read<PostRepository>(),
             authBloc: context.read<AuthBloc>(),
+            likedPostsCubit: context.read<LikedPostsCubit>(),
           )..add(FeedFetchPosts()),
           child: FeedScreen(),
         );
@@ -77,6 +79,7 @@ class TabNavigator extends StatelessWidget {
             postRepository: context.read<PostRepository>(),
             userRepository: context.read<UserRepository>(),
             authBloc: context.read<AuthBloc>(),
+            likedPostsCubit: context.read<LikedPostsCubit>(),
           )..add(
               ProfileLoadUser(userId: context.read<AuthBloc>().state.user.uid)),
           child: ProfileScreen(),

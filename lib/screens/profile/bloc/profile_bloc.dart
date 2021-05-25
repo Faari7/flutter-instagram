@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_instagram/blocs/auth/auth_bloc.dart';
+import 'package:flutter_instagram/cubits/cubits.dart';
 import 'package:flutter_instagram/models/models.dart';
 import 'package:flutter_instagram/repositories/repositories.dart';
 
@@ -14,6 +15,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   final UserRepository _userRepository;
   final PostRepository _postRepository;
   final AuthBloc _authBloc;
+  final LikedPostsCubit _likedPostsCubit;
 
   StreamSubscription<List<Future<Post>>> _postSubscription;
 
@@ -21,9 +23,11 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     @required UserRepository userRepository,
     @required PostRepository postRepository,
     @required AuthBloc authBloc,
+    @required LikedPostsCubit likedPostsCubit,
   })  : _userRepository = userRepository,
         _postRepository = postRepository,
         _authBloc = authBloc,
+        _likedPostsCubit = likedPostsCubit,
         super(ProfileState.initial());
 
   @override
@@ -90,6 +94,10 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   Stream<ProfileState> _mapProfileUpdatePostToState(
       ProfileUpdatePost event) async* {
     yield state.copyWith(posts: event.posts);
+
+    final likedPostIds = await _postRepository.getLikedPostIds(
+        userId: _authBloc.state.user.uid, posts: event.posts);
+    _likedPostsCubit.updateLikedPosts(postIds: likedPostIds);
   }
 
   Stream<ProfileState> _mapProfileFollowUserToState() async* {

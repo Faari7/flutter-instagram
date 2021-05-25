@@ -61,7 +61,7 @@ class PostRepository extends BasePostRepository {
           .doc(userId)
           .collection(Paths.userFeed)
           .orderBy('date', descending: true)
-          .limit(2)
+          .limit(10)
           .get();
     } else {
       final lastPostDoc = await _firebaseFirestore
@@ -82,7 +82,7 @@ class PostRepository extends BasePostRepository {
           .collection(Paths.userFeed)
           .orderBy('date', descending: true)
           .startAfterDocument(lastPostDoc)
-          .limit(2)
+          .limit(10)
           .get();
     }
 
@@ -90,5 +90,58 @@ class PostRepository extends BasePostRepository {
       postSnap.docs.map((doc) => Post.fromDocument(doc)).toList(),
     );
     return posts;
+  }
+
+  @override
+  void createLike({@required Post post, @required String userId}) {
+    _firebaseFirestore
+        .collection(Paths.posts)
+        .doc(post.id)
+        .update({'likes': FieldValue.increment(1)});
+
+    _firebaseFirestore
+        .collection(Paths.likes)
+        .doc(post.id)
+        .collection(Paths.postLikes)
+        .doc(userId)
+        .set({});
+  }
+
+  @override
+  void deleteLike({@required String postId, @required String userId}) {
+    _firebaseFirestore
+        .collection(Paths.posts)
+        .doc(postId)
+        .update({'likes': FieldValue.increment(-1)});
+
+    _firebaseFirestore
+        .collection(Paths.likes)
+        .doc(postId)
+        .collection(Paths.postLikes)
+        .doc(userId)
+        .delete();
+  }
+
+  @override
+  Future<Set<String>> getLikedPostIds({
+    @required String userId,
+    @required List<Post> posts,
+  }) async {
+    final postIds = <String>{};
+
+    for (final post in posts) {
+      final likeDoc = await _firebaseFirestore
+          .collection(Paths.likes)
+          .doc(post.id)
+          .collection(Paths.postLikes)
+          .doc(userId)
+          .get();
+
+      if (likeDoc.exists) {
+        postIds.add(post.id);
+      }
+    }
+
+    return postIds;
   }
 }

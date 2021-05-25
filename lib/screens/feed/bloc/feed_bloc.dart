@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_instagram/blocs/auth/auth_bloc.dart';
+import 'package:flutter_instagram/cubits/cubits.dart';
 import 'package:flutter_instagram/models/failure_model.dart';
 import 'package:flutter_instagram/models/models.dart';
 import 'package:flutter_instagram/repositories/post/post_repository.dart';
@@ -14,12 +15,15 @@ part 'feed_state.dart';
 class FeedBloc extends Bloc<FeedEvent, FeedState> {
   final PostRepository _postRepository;
   final AuthBloc _authBloc;
+  final LikedPostsCubit _likedPostsCubit;
 
   FeedBloc({
     @required PostRepository postRepository,
     @required AuthBloc authBloc,
+    @required LikedPostsCubit likedPostsCubit,
   })  : _postRepository = postRepository,
         _authBloc = authBloc,
+        _likedPostsCubit = likedPostsCubit,
         super(FeedState.initial());
 
   @override
@@ -36,6 +40,11 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     try {
       final posts =
           await _postRepository.getUserFeed(userId: _authBloc.state.user.uid);
+      _likedPostsCubit.clearAllLikedPosts();
+      final likedPostIds = await _postRepository.getLikedPostIds(
+          userId: _authBloc.state.user.uid, posts: posts);
+      _likedPostsCubit.updateLikedPosts(postIds: likedPostIds);
+
       yield state.copyWith(posts: posts, status: FeedStatus.loaded);
     } catch (err) {
       yield state.copyWith(
@@ -53,6 +62,11 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
       final posts = await _postRepository.getUserFeed(
           userId: _authBloc.state.user.uid, lastPostId: lastPostId);
       final updatedPosts = List<Post>.from(state.posts)..addAll(posts);
+
+      final likedPostIds = await _postRepository.getLikedPostIds(
+          userId: _authBloc.state.user.uid, posts: posts);
+      _likedPostsCubit.updateLikedPosts(postIds: likedPostIds);
+
       yield state.copyWith(posts: updatedPosts, status: FeedStatus.loaded);
     } catch (err) {
       print("ERROR =>>>>>>>>  ${err}");

@@ -77,7 +77,7 @@ class SignupScreen extends StatelessWidget {
                             const SizedBox(height: 12),
                             TextFormField(
                               autocorrect: false,
-                              keyboardType: TextInputType.name,
+                              keyboardType: TextInputType.emailAddress,
                               decoration: InputDecoration(hintText: 'Email'),
                               onChanged: (value) => context
                                   .read<SignupCubit>()
