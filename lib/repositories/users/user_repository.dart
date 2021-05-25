@@ -34,4 +34,62 @@ class UserRepository extends BaseUserRepository {
         .get();
     return userSnaps.docs.map((doc) => User.fromDocument(doc)).toList();
   }
+
+  @override
+  void followUser({
+    @required String userId,
+    @required String followUserId,
+  }) async {
+    // Add follow user to the current user's user following.
+    _firebaseFirestore
+        .collection(Paths.following)
+        .doc(userId)
+        .collection(Paths.userFollowing)
+        .doc(followUserId)
+        .set({});
+    // Add current user to the follow user's userFollowers
+    _firebaseFirestore
+        .collection(Paths.followers)
+        .doc(followUserId)
+        .collection(Paths.userFollowers)
+        .doc(userId)
+        .set({});
+  }
+
+  @override
+  void unfollowUser({
+    @required String userId,
+    @required String unfollowUserId,
+  }) {
+    /// remove unfollowUser from user's following.
+    _firebaseFirestore
+        .collection(Paths.following)
+        .doc(userId)
+        .collection(Paths.userFollowing)
+        .doc(unfollowUserId)
+        .delete();
+
+    // remove user from unfollowUser's userFollowers
+    _firebaseFirestore
+        .collection(Paths.followers)
+        .doc(unfollowUserId)
+        .collection(Paths.userFollowers)
+        .doc(userId)
+        .delete();
+  }
+
+  @override
+  Future<bool> isFollowing({
+    @required String userId,
+    @required String otherUserId,
+  }) async {
+    // is otheruser in user's unfollowing
+    final otherUserDoc = await _firebaseFirestore
+        .collection(Paths.following)
+        .doc(userId)
+        .collection(Paths.userFollowing)
+        .doc(otherUserId)
+        .get();
+    return otherUserDoc.exists;
+  }
 }

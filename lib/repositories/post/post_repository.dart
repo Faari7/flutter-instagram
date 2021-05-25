@@ -47,4 +47,48 @@ class PostRepository extends BasePostRepository {
         .map((snap) =>
             snap.docs.map((doc) => Comment.fromDocument(doc)).toList());
   }
+
+  @override
+  Future<List<Post>> getUserFeed({
+    String userId,
+    String lastPostId,
+  }) async {
+    QuerySnapshot postSnap;
+
+    if (lastPostId == null) {
+      postSnap = await _firebaseFirestore
+          .collection(Paths.feeds)
+          .doc(userId)
+          .collection(Paths.userFeed)
+          .orderBy('date', descending: true)
+          .limit(2)
+          .get();
+    } else {
+      final lastPostDoc = await _firebaseFirestore
+          .collection(Paths.feeds)
+          .doc(userId)
+          .collection(Paths.userFeed)
+          .doc(lastPostId)
+          .get();
+
+      /// if there is no enough posts to load
+      if (!lastPostDoc.exists) {
+        return [];
+      }
+
+      postSnap = await _firebaseFirestore
+          .collection(Paths.feeds)
+          .doc(userId)
+          .collection(Paths.userFeed)
+          .orderBy('date', descending: true)
+          .startAfterDocument(lastPostDoc)
+          .limit(2)
+          .get();
+    }
+
+    final posts = Future.wait(
+      postSnap.docs.map((doc) => Post.fromDocument(doc)).toList(),
+    );
+    return posts;
+  }
 }
