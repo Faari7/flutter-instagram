@@ -6,3 +6,5 @@ export 'storage/base_storage_repository.dart';
 export 'storage/storage_repository.dart';
 export 'post/base_post_repository.dart';
 export 'post/post_repository.dart';
+export 'notifications/base_notifications_repository.dart';
+export 'notifications/notifications_repository.dart';

@@ -5,3 +5,9 @@ enum BottomNavItem {
   notifications,
   profile,
 }
+
+enum NotificationType {
+  like,
+  comment,
+  follow,
+}
