@@ -29,12 +29,12 @@ class AuthRepository extends BaseAuthRepository {
       final credentials = await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
       final user = credentials.user;
-      _firebaseFirestore.collection(Paths.users).doc(user.uid).set({
-        'username': username,
-        'email': email,
-        'followers': 0,
-        'following': 0,
-      });
+      // _firebaseFirestore.collection(Paths.users).doc(user.uid).set({
+      //   'username': username,
+      //   'email': email,
+      //   'followers': 0,
+      //   'following': 0,
+      // });
       return user;
     } on auth.FirebaseAuthException catch (err) {
       throw Failure(code: err.code, message: err.message);

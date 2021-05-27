@@ -3,6 +3,22 @@ const admin = require('firebase-admin');
 
 admin.initializeApp();
 
+
+/// this will fire when user create their account.
+exports.newUserSignup = functions.auth.user().onCreate(user => {
+
+  return admin.firestore().collection('users').doc(user.uid).set({
+    email: user.email,
+    bio: 'This is created via cloud function',
+    followers: 100,
+    following: 0,
+    profileImageUrl: '',
+    username: '',
+  });
+
+});
+
+
 exports.onFollowUser = functions.firestore
   .document('/followers/{userId}/userFollowers/{followerId}')
   .onCreate(async (_, context) => {
