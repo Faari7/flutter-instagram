@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,12 +22,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b159a13e-b394-4c4c-91d9-dc7fddb21bbc" name="Default Changelist" comment="" />
+    <list default="true" id="b159a13e-b394-4c4c-91d9-dc7fddb21bbc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blocs/simple_bloc_observer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blocs/simple_bloc_observer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/comment_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/comment_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/notification_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/notification_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/post_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/post_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/user_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/post/post_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/post/post_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/noumannaseer/.android/avd/Nexus_5X_API_30.avd]" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -41,7 +61,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunManager">
@@ -50,6 +70,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -74,27 +95,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1400" height="322" key="GridCell.Tab.0.bottom" timestamp="1622026790207">
-      <screen x="0" y="25" width="1920" height="1000" />
-    </state>
-    <state width="1400" height="322" key="GridCell.Tab.0.bottom/0.25.1920.1000@0.25.1920.1000" timestamp="1622026790207" />
-    <state width="1299" height="322" key="GridCell.Tab.0.bottom/0.25.1920.970@0.25.1920.970" timestamp="1621582745839" />
-    <state width="1400" height="322" key="GridCell.Tab.0.center" timestamp="1622026790206">
-      <screen x="0" y="25" width="1920" height="1000" />
-    </state>
-    <state width="1400" height="322" key="GridCell.Tab.0.center/0.25.1920.1000@0.25.1920.1000" timestamp="1622026790206" />
-    <state width="1299" height="322" key="GridCell.Tab.0.center/0.25.1920.970@0.25.1920.970" timestamp="1621582745839" />
-    <state width="1400" height="322" key="GridCell.Tab.0.left" timestamp="1622026790206">
-      <screen x="0" y="25" width="1920" height="1000" />
-    </state>
-    <state width="1400" height="322" key="GridCell.Tab.0.left/0.25.1920.1000@0.25.1920.1000" timestamp="1622026790206" />
-    <state width="1299" height="322" key="GridCell.Tab.0.left/0.25.1920.970@0.25.1920.970" timestamp="1621582745838" />
-    <state width="1400" height="322" key="GridCell.Tab.0.right" timestamp="1622026790207">
-      <screen x="0" y="25" width="1920" height="1000" />
-    </state>
-    <state width="1400" height="322" key="GridCell.Tab.0.right/0.25.1920.1000@0.25.1920.1000" timestamp="1622026790207" />
-    <state width="1299" height="322" key="GridCell.Tab.0.right/0.25.1920.970@0.25.1920.970" timestamp="1621582745839" />
   </component>
 </project>

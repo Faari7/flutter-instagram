@@ -32,8 +32,7 @@ class User extends Equatable {
   );
 
   @override
-  List<Object> get props =>
-      [id, username, email, profileImageURL, bio, followers, following];
+  List<Object> get props => [id, username, email, profileImageURL, bio, followers, following];
 
   User copyWith({
     String id,
@@ -80,7 +79,7 @@ class User extends Equatable {
   /// model to client side model
   /// and return a User model where it called
 
-  factory User.fromDocument(DocumentSnapshot doc) {
+  factory User.fromDocument(DocumentSnapshot<Map<String, dynamic>> doc) {
     if (doc == null) return null;
     final data = doc.data();
     return User(

@@ -60,8 +60,7 @@ class PostRepository extends BasePostRepository {
         .collection(Paths.postComments)
         .orderBy('date', descending: false)
         .snapshots()
-        .map((snap) =>
-            snap.docs.map((doc) => Comment.fromDocument(doc)).toList());
+        .map((snap) => snap.docs.map((doc) => Comment.fromDocument(doc)).toList());
   }
 
   @override
@@ -69,7 +68,7 @@ class PostRepository extends BasePostRepository {
     String userId,
     String lastPostId,
   }) async {
-    QuerySnapshot postSnap;
+    QuerySnapshot<Map<String, dynamic>> postSnap;
 
     if (lastPostId == null) {
       postSnap = await _firebaseFirestore
@@ -110,17 +109,9 @@ class PostRepository extends BasePostRepository {
 
   @override
   void createLike({@required Post post, @required String userId}) {
-    _firebaseFirestore
-        .collection(Paths.posts)
-        .doc(post.id)
-        .update({'likes': FieldValue.increment(1)});
+    _firebaseFirestore.collection(Paths.posts).doc(post.id).update({'likes': FieldValue.increment(1)});
 
-    _firebaseFirestore
-        .collection(Paths.likes)
-        .doc(post.id)
-        .collection(Paths.postLikes)
-        .doc(userId)
-        .set({});
+    _firebaseFirestore.collection(Paths.likes).doc(post.id).collection(Paths.postLikes).doc(userId).set({});
 
     final notification = Notif(
       type: NotificationType.like,
@@ -138,17 +129,9 @@ class PostRepository extends BasePostRepository {
 
   @override
   void deleteLike({@required String postId, @required String userId}) {
-    _firebaseFirestore
-        .collection(Paths.posts)
-        .doc(postId)
-        .update({'likes': FieldValue.increment(-1)});
+    _firebaseFirestore.collection(Paths.posts).doc(postId).update({'likes': FieldValue.increment(-1)});
 
-    _firebaseFirestore
-        .collection(Paths.likes)
-        .doc(postId)
-        .collection(Paths.postLikes)
-        .doc(userId)
-        .delete();
+    _firebaseFirestore.collection(Paths.likes).doc(postId).collection(Paths.postLikes).doc(userId).delete();
   }
 
   @override

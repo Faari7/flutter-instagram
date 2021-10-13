@@ -46,20 +46,16 @@ class Notif extends Equatable {
 
     return {
       'type': notificationType,
-      'fromUser':
-          FirebaseFirestore.instance.collection(Paths.users).doc(fromUser.id),
-      'post': post != null
-          ? FirebaseFirestore.instance.collection(Paths.posts).doc(post.id)
-          : null,
+      'fromUser': FirebaseFirestore.instance.collection(Paths.users).doc(fromUser.id),
+      'post': post != null ? FirebaseFirestore.instance.collection(Paths.posts).doc(post.id) : null,
       'date': Timestamp.fromDate(date),
     };
   }
 
-  static Future<Notif> fromDocument(DocumentSnapshot doc) async {
+  static Future<Notif> fromDocument(DocumentSnapshot<Map<String, dynamic>> doc) async {
     if (doc == null) return null;
     final data = doc.data();
-    final notificationType =
-        EnumToString.fromString(NotificationType.values, doc['type']);
+    final notificationType = EnumToString.fromString(NotificationType.values, doc['type']);
 
     // from user
     final fromUserRef = data['author'] as DocumentReference;

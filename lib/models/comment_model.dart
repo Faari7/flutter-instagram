@@ -42,14 +42,13 @@ class Comment extends Equatable {
   Map<String, dynamic> toDocument() {
     return {
       'postId': postId,
-      'author':
-          FirebaseFirestore.instance.collection(Paths.users).doc(author.id),
+      'author': FirebaseFirestore.instance.collection(Paths.users).doc(author.id),
       'content': content,
       'date': Timestamp.fromDate(date),
     };
   }
 
-  static Future<Comment> fromDocument(DocumentSnapshot doc) async {
+  static Future<Comment> fromDocument(DocumentSnapshot<Map<String, dynamic>> doc) async {
     if (doc == null) return null;
     final data = doc.data();
     final authorRef = data['author'] as DocumentReference;

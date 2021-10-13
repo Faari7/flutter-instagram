@@ -45,8 +45,7 @@ class Post extends Equatable {
 
   Map<String, dynamic> toDocument() {
     return {
-      'author':
-          FirebaseFirestore.instance.collection(Paths.users).doc(author.id),
+      'author': FirebaseFirestore.instance.collection(Paths.users).doc(author.id),
       'imageUrl': imageUrl,
       'caption': caption,
       'likes': likes,
@@ -54,7 +53,7 @@ class Post extends Equatable {
     };
   }
 
-  static Future<Post> fromDocument(DocumentSnapshot doc) async {
+  static Future<Post> fromDocument(DocumentSnapshot<Map<String, dynamic>> doc) async {
     if (doc == null) return null;
     final data = doc.data();
     final authorRef = data['author'] as DocumentReference;
